@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirasi Kehidupan</title>
+    
+    <!-- Google Fonts untuk tipografi yang lebih berkelas -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #f1f5f9;
+            background-color: #030712;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background Mesh Gradient yang Estetik & Modern */
+        .bg-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: 
+                radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Judul Utama */
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-style: italic;
+            letter-spacing: 6px;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.1));
+        }
+
+        /* Kotak Quote (Glassmorphism Style) */
+        .quote-container {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            max-width: 680px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 3.5rem 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            line-height: 2.2;
+            word-spacing: 2px;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        /* Highlight Warna Khusus pada Kata Tertentu */
+        .quote span {
+            color: #38bdf8;
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Bagian Pembuat Quote (Author) */
+        .author {
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.5rem;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* Responsif untuk Layar HP */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 3px;
+                padding: 0 1rem;
+            }
+            .quote-container {
+                padding: 2.5rem 1.5rem;
+            }
+            .quote {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Efek Cahaya Latar Belakang -->
+    <div class="bg-glow"></div>
+
+    <!-- Judul Halaman -->
+    <h1>Cahaya Kehidupan</h1>
+
+    <!-- Konten Quote -->
+    <div class="quote-container">
+        <p class="quote">
+            "Berjalanlah dalam <span>kebenaran</span>, meskipun kamu berjalan sendiri. Hidupgilah dengan <span>keberanian</span>, walau badai menghadang. Karena setiap langkah kecil berarti untuk masa depan yang lebih cerah."
+        </p>
+        <span class="author">— Mario Teguh</span>
+    </div>
+
+</body>
+</html>
