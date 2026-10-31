@@ -3,39 +3,181 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CSS Simple Selectors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar CSS Simple Selectors</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f3f6fb;
+      color: #243047;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 3.5rem 1.5rem;
+      background: #172554;
+      color: #fff;
+      text-align: center;
+    }
+
+    header p {
+      max-width: 620px;
+      margin: 0.75rem auto 0;
+      color: #dbeafe;
+    }
+
+    main {
+      width: min(900px, calc(100% - 2rem));
+      margin: 2rem auto;
+    }
+
+    .intro,
+    .selector-card,
+    .demo {
+      margin-bottom: 1rem;
+      padding: 1.25rem;
+      border: 1px solid #dce4f0;
+      border-radius: 0.8rem;
+      background: #fff;
+    }
+
+    .selector-card h2,
+    .selector-card p {
+      margin-top: 0;
+    }
+
+    .selector-card h2 {
+      margin-bottom: 0.5rem;
+      color: #172554;
+    }
+
+    .selector-card p {
+      margin-bottom: 0.75rem;
+    }
+
+    code {
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      background: #eef2ff;
+      color: #3730a3;
+      font-family: Consolas, monospace;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 0.75rem 0 0;
+      padding: 0.85rem;
+      border-radius: 0.5rem;
+      background: #172554;
+      color: #e0e7ff;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+      color: inherit;
+    }
+
+    .catatan {
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      background: #fef3c7;
+      color: #854d0e;
+    }
+
+    #judul-utama {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.25rem);
+    }
+
+    .demo-sample {
+      padding: 1rem;
+      border-left: 4px solid #6366f1;
+      border-radius: 0.4rem;
+      background: #f8fafc;
+    }
+
+    footer {
+      padding: 1.5rem;
+      color: #64748b;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <h1 id="judul-utama">Belajar Simple Selectors</h1>
+    <p>Kenali cara memilih elemen HTML dengan selector dasar, lalu lihat contoh CSS-nya.</p>
+  </header>
 
-  <h1 id="heading">Belajar Simple Selectors</h1>
+  <main>
+    <section class="intro" aria-labelledby="pengertian">
+      <h2 id="pengertian">Apa itu selector?</h2>
+      <p>Selector adalah bagian dari CSS yang menentukan elemen HTML mana yang akan diberi gaya.</p>
+      <pre><code>selector {
+  properti: nilai;
+}</code></pre>
+    </section>
 
-  <h3>Judul Artikel 1</h3>
-  <p>Paragraf biasa tanpa class.</p>
+    <section class="selector-card" aria-labelledby="universal">
+      <h2 id="universal">1. Universal selector</h2>
+      <p>Selector <code>*</code> memilih semua elemen pada halaman. Contoh ini mengatur perhitungan ukuran elemen.</p>
+      <pre><code>* {
+  box-sizing: border-box;
+}</code></pre>
+    </section>
 
-  <h3>Judul Artikel 2</h3>
-  <p class="highlight">Paragraf ini diberi tanda stabilo menggunakan Class .highlight</p>
-  <span class="highlight">Span ini juga pakai class .highlight</span>
+    <section class="selector-card" aria-labelledby="elemen">
+      <h2 id="elemen">2. Type selector</h2>
+      <p>Selector berdasarkan nama tag, seperti <code>p</code>, memilih semua elemen dengan tag tersebut.</p>
+      <pre><code>p {
+  line-height: 1.6;
+}</code></pre>
+    </section>
 
-  <hr>
+    <section class="selector-card" aria-labelledby="class">
+      <h2 id="class">3. Class selector</h2>
+      <p>Selector class diawali titik. Class bisa digunakan pada banyak elemen. Perhatikan teks <span class="catatan">penting</span> ini.</p>
+      <pre><code>.catatan {
+  background: #fef3c7;
+  color: #854d0e;
+}</code></pre>
+    </section>
 
-  <form>
-    <label>Nama (Input Teks):</label>
-    <input type="text" name="nama" placeholder="Masukkan Nama">
-    <br><br>
-    <label>Password:</label>
-    <input type="password" name="password">
-  </form>
+    <section class="selector-card" aria-labelledby="id">
+      <h2 id="id">4. ID selector</h2>
+      <p>Selector ID diawali tanda pagar dan ditujukan untuk satu elemen unik. Judul besar di bagian atas memakai <code>id="judul-utama"</code>.</p>
+      <pre><code>#judul-utama {
+  font-size: 3rem;
+}</code></pre>
+    </section>
 
-  <br>
+    <section class="selector-card" aria-labelledby="group">
+      <h2 id="group">5. Grouping selector</h2>
+      <p>Beberapa selector dapat digabung dengan koma agar memakai aturan yang sama. Contoh ini berlaku untuk semua <code>h2</code> dan <code>p</code>.</p>
+      <pre><code>h2, p {
+  font-family: Arial, sans-serif;
+}</code></pre>
+    </section>
 
-  <p>
-    <i>Ini elemen miring</i> dan <span>ini elemen span</span>.
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, incidunt?
-  </p>
+    <section class="demo" aria-labelledby="ringkasan">
+      <h2 id="ringkasan">Ringkasan</h2>
+      <div class="demo-sample">
+        <p><code>*</code> semua elemen · <code>p</code> tag · <code>.catatan</code> class · <code>#judul-utama</code> ID</p>
+        <p>Gunakan koma untuk mengelompokkan selector, misalnya <code>h2, p</code>.</p>
+      </div>
+    </section>
+  </main>
 
-  <a href="https://wpucourse.id">WPUCourse.id</a>
-
+  <footer>
+    Materi dasar CSS selector
+  </footer>
 </body>
 
 </html>
