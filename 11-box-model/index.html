@@ -1,43 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coba Div & Span</title>
+  <meta name="theme-color" content="#f5f4ef">
+  <title>Belajar Div, Span, dan Box Model</title>
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    * {
+      box-sizing: border-box;
     }
 
-    .kotak {
-      background-color: #f0f0f0;
-      border: 2px solid #333;
-      width: 600px;
-      padding: 20px;
+    body {
+      margin: 0;
+      background: #f5f4ef;
+      color: #20302f;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    .halaman {
+      width: min(100% - 40px, 1040px);
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+
+    .pembuka {
+      max-width: 720px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+
+    .label {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 5px 12px;
+      border: 1px solid #c9ded6;
+      border-radius: 999px;
+      background: #e8f2ed;
+      color: #256653;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      color: #183c36;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      letter-spacing: -0.045em;
+      line-height: 1.15;
+    }
+
+    .pengantar {
+      margin-bottom: 0;
+      color: #586763;
+      font-size: 1.05rem;
+    }
+
+    .kumpulan-kartu {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .kartu {
+      min-height: 230px;
+      padding: 26px;
+      border: 1px solid #e2e5df;
+      border-top: 4px solid #4f9a7d;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgb(34 57 49 / 5%);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .kartu:nth-child(2) {
+      border-top-color: #df9b53;
+    }
+
+    .kartu:nth-child(3) {
+      border-top-color: #7793c5;
+    }
+
+    .kartu:nth-child(4) {
+      border-top-color: #b47eaa;
+    }
+
+    .kartu:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgb(34 57 49 / 10%);
+    }
+
+    .nomor {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #72817b;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .kartu h2 {
+      margin-bottom: 10px;
+      color: #203d36;
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    .kartu p {
+      margin-bottom: 0;
+      color: #586763;
     }
 
     .highlight {
-      background-color: rgb(255, 215, 215);
-      color: red;
-      font-weight: bold;
+      padding: 1px 5px;
+      border-radius: 5px;
+      background: #fff0cf;
+      color: #79501b;
+      font-weight: 700;
+    }
+
+    .catatan {
+      margin-top: 24px;
+      padding: 20px 24px;
+      border: 1px solid #c9ded6;
+      border-radius: 14px;
+      background: #e8f2ed;
+      color: #31574b;
+    }
+
+    .catatan strong {
+      color: #204d3e;
+    }
+
+    @media (max-width: 640px) {
+      .halaman {
+        width: min(100% - 28px, 520px);
+        padding: 40px 0;
+      }
+
+      .kumpulan-kartu {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .kartu {
+        min-height: 0;
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .kartu {
+        transition: none;
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>Perbedaan Div dan Span</h1>
-  <div class="kotak">
-    <h2>Ini adalah Judul Artikel</h2>
-    <p>
-      Div adalah elemen <strong>block</strong>. Lihat
-      bagaimana kotak abu-abu ini membungkus seluruh konten
-      artikel.
-      Di dalam paragraf ini, kita akan menggunakan span
-      untuk memberi <span class="highlight">style</span>
-      pada kata-kata tertentu.
-    </p>
-  </div>
+  <main class="halaman">
+    <header class="pembuka">
+      <p class="label">Catatan HTML & CSS</p>
+      <h1>Kenalan dengan <span class="highlight">Div, Span,</span> dan Box Model</h1>
+      <p class="pengantar">
+        Halaman web tersusun dari elemen-elemen kecil. Yuk, pahami cara
+        mengelompokkan konten dan mengatur ruangnya agar tampilan lebih rapi.
+      </p>
+    </header>
+
+    <section class="kumpulan-kartu" aria-label="Materi dasar HTML dan CSS">
+      <article class="kartu">
+        <span class="nomor">01 / ELEMEN</span>
+        <h2>Div sebagai wadah</h2>
+        <p>
+          <span class="highlight">Div</span> adalah elemen block yang cocok
+          untuk mengelompokkan beberapa bagian halaman. Secara default, div
+          dimulai pada baris baru dan biasanya mengambil lebar yang tersedia.
+        </p>
+      </article>
+
+      <article class="kartu">
+        <span class="nomor">02 / TEKS</span>
+        <h2>Span untuk penekanan</h2>
+        <p>
+          Berbeda dari div, <span class="highlight">span</span> adalah elemen
+          inline. Gunakan span saat ingin memberi gaya pada kata atau potongan
+          teks tanpa memulai baris baru.
+        </p>
+      </article>
+
+      <article class="kartu">
+        <span class="nomor">03 / BOX MODEL</span>
+        <h2>Ruang di sekitar konten</h2>
+        <p>
+          Setiap kotak memiliki <span class="highlight">content</span>,
+          padding, border, dan margin. Padding memberi ruang di dalam batas
+          kotak, sedangkan margin memberi jarak dengan elemen lain.
+        </p>
+      </article>
+
+      <article class="kartu">
+        <span class="nomor">04 / TATA LETAK</span>
+        <h2>Susun agar mudah dibaca</h2>
+        <p>
+          Kelompokkan informasi yang saling berkaitan dalam satu wadah, lalu
+          gunakan jarak, warna, dan judul untuk membangun hierarki. Tata letak
+          yang baik tetap nyaman dibaca di layar kecil maupun besar.
+        </p>
+      </article>
+    </section>
+
+    <aside class="catatan">
+      <strong>Ingat:</strong> gunakan div untuk membentuk kelompok atau area,
+      dan span untuk menata bagian kecil di dalam teks. Pilih elemen semantik
+      seperti <code>&lt;article&gt;</code> atau <code>&lt;section&gt;</code>
+      ketika maknanya lebih sesuai.
+    </aside>
+  </main>
 </body>
 
 </html>
