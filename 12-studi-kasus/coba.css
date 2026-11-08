@@ -1,0 +1,284 @@
+/* Pengaturan Umum */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header Artist dengan Background Gradien Colorful */
+.artist-header {
+    background: linear-gradient(135deg, #ff2a85 0%, #7928ca 50%, #4338ca 100%);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(121, 40, 202, 0.3);
+}
+
+.artist-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.genre-tags {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.genre-tags span {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Kontainer Utama dengan Warna Latar Lembut */
+.main-container {
+    max-width: 900px;
+    margin: -30px auto 40px auto;
+    background: linear-gradient(180deg, #ffffff 0%, #fffbfc 100%);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(121, 40, 202, 0.08);
+    padding: 40px;
+    position: relative;
+    border: 1px solid rgba(255, 42, 133, 0.1);
+}
+
+/* Bagian Profil */
+.profile-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.profile-img-container img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 25px rgba(255, 42, 133, 0.35);
+    margin-bottom: 25px;
+}
+
+.bio-content {
+    max-width: 750px;
+    margin: 0 auto 35px auto;
+    color: #4a5568;
+    text-align: justify;
+    font-size: 1rem;
+    background: #fff8fb;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 4px solid #ff2a85;
+    box-shadow: 0 2px 8px rgba(255, 42, 133, 0.05);
+}
+
+.bio-content p {
+    margin-bottom: 12px;
+}
+.bio-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Kotak Statistik Warna-warni */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #fff0f6 0%, #f3e8ff 100%);
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #fbcfe8;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 42, 133, 0.2);
+}
+
+.stat-box h3 {
+    font-size: 1.6rem;
+    color: #ff2a85;
+    margin-bottom: 5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.stat-box p {
+    font-size: 0.85rem;
+    color: #6b21a8;
+    font-weight: 600;
+}
+
+/* Bagian Discography */
+.discography-section {
+    text-align: center;
+    margin-bottom: 50px;
+    border-top: 2px dashed #f3e8ff;
+    padding-top: 45px;
+}
+
+.discography-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1a202c;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.album-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fcf8ff 100%);
+    border: 1px solid #e9d5ff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(121, 40, 202, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.album-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(121, 40, 202, 0.18);
+    border-color: #ff2a85;
+}
+
+.album-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.album-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+    color: #2d3748;
+}
+
+.album-card .year {
+    font-size: 0.85rem;
+    color: #9333ea;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.btn-listen {
+    display: inline-block;
+    background: linear-gradient(135deg, #7928ca 0%, #ff2a85 100%);
+    color: white;
+    text-decoration: none;
+    padding: 9px 22px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: opacity 0.2s, box-shadow 0.2s;
+}
+
+.btn-listen:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 12px rgba(255, 42, 133, 0.4);
+}
+
+/* Bagian Connect / Sosial Media */
+.connect-section {
+    text-align: center;
+    border-top: 2px dashed #f3e8ff;
+    padding-top: 45px;
+    margin-bottom: 10px;
+}
+
+.connect-section h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #1a202c;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #7928ca 0%, #ff2a85 100%);
+    box-shadow: 0 6px 15px rgba(121, 40, 202, 0.3);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #1a202c 0%, #0f172a 100%);
+    color: #a0aec0;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 0.85rem;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #ff2a85;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsif untuk layar kecil / HP */
+@media (max-width: 768px) {
+    .stats-grid, .albums-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-container {
+        margin: 15px;
+        padding: 20px;
+    }
+    .artist-header h1 {
+        font-size: 2.2rem;
+    }
+}
